@@ -1,58 +1,11 @@
-import socket
-import threading
 from server import protocmsd
 
 
-def start(bind_address, bind_port, current_num, auth=False):
-    s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.bind((bind_address, bind_port))
-    s.listen(current_num)
-    global client_list
-    global client_list_lock
-    global sem
-    client_list = []
-    client_list_lock = threading.Lock()
-    sem = threading.Semaphore(current_num)
-    while True:
-        conn, address = s.accept()
-        conn.settimeout(8)
-        print("连接地址: %s" % str(address))
-        t = threading.Thread(target=wait_connect, args=(conn, address, auth))
-        t.start()
+def ss5forward(data, conn, auth):
 
-
-def wait_connect(conn, address, auth):
-    with sem:
-        # 加入连接列表
-        client_list_lock.acquire()
-        client_list.append((conn, address))
-        client_list_lock.release()
-        try:
-            # 执行
-            execute(conn, auth)
-        except Exception as e:
-            print(e)
-        # 移除连接列表
-        client_list_lock.acquire()
-        client_list.remove((conn, address))
-        client_list_lock.release()
-        # 关闭连接
-        conn.close()
-        print("当前连接：", client_list)
-        print("数量：", len(client_list))
-
-
-def execute(conn, auth):
     # 初始化变量
     METHODS_D1 = b''
     REP_D2 = b'\x00'
-
-    # 接收
-    data = conn.recv(512)
-    print("接收1: %s" % data)
-
-    # 检查协议
-    #
 
     VER_C1 = data[0:1]
     print("版本:", VER_C1)
@@ -159,6 +112,3 @@ def execute(conn, auth):
     target_host = DST_ADDR_C2.decode()
     target_port = int(DST_PORT_C2.hex(), 16)
     protocmsd.forward_data(conn, target_host, target_port)
-
-
-
