@@ -1,16 +1,6 @@
 import socket
 import threading
-
-
-# 用户列表
-def auth_users():
-    u_list = []
-    user1 = {
-        'usr': 'admin',
-        'pwd': '123456',
-    }
-    u_list.append(user1)
-    return u_list
+from utils import Debug
 
 
 # 转发数据
@@ -28,7 +18,7 @@ def forward_data(conn, target_host, target_port):
             break
         except OSError:
             break
-        print('接收3：', tmp_data)
+        Debug.log('接收3：', tmp_data)
         if not tmp_data:
             break
         else:
@@ -47,12 +37,12 @@ def forward_data(conn, target_host, target_port):
                 tr.start()
 
     # 关闭目标连接
-    print("关闭目标连接")
+    Debug.log("关闭目标连接")
     try:
         s.close()
     finally:
         conn.close()
-    print("----------------------第三次交互完毕------------------------------")
+    Debug.log("----------------------第三次交互完毕------------------------------")
 
 
 # 接收并返还客户端
@@ -60,21 +50,21 @@ def forward_recv(s, conn):
     while True:
         try:
             tmp_data = s.recv(1024)
-            print('响应3:', tmp_data)
+            Debug.log('响应3:', tmp_data)
             if not tmp_data:
                 break
             else:
                 conn.send(tmp_data)
         except ConnectionAbortedError:
-            print('ConnectionAbortedError')
+            Debug.log('ConnectionAbortedError')
             break
         except OSError:
-            print("OSError")
+            Debug.log("OSError")
             break
         except socket.timeout:
-            print('timeout')
+            Debug.log('timeout')
             break
-    print("子线程关闭连接")
+    Debug.log("子线程关闭连接")
     try:
         s.close()
     finally:

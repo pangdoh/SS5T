@@ -1,4 +1,5 @@
 from urllib import parse
+from core import Constants
 
 
 # 解析url
@@ -29,3 +30,11 @@ print("host:", host)
 print("port:", port)
 print("path:", path)
 print("query:", query)
+
+
+class Debug:
+
+    @staticmethod
+    def log(s, *args):
+        if Constants.debug:
+            print(s, *args)
