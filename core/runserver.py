@@ -34,11 +34,7 @@ def wait_connect(conn, address):
             client_list_lock.acquire()
             client_list.append((conn, address))
             client_list_lock.release()
-        try:
-            # 执行
-            execute(conn)
-        except Exception as e:
-            print(e)
+        execute(conn)
         if Constants.debug:
             # 移除连接列表
             client_list_lock.acquire()

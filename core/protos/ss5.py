@@ -99,6 +99,7 @@ def ss5forward(data, conn):
         DST_PORT_C2 = data[8:10]
         target_host = socket.inet_ntoa(struct.pack('!L', int(DST_ADDR_C2.hex(), 16)))
     elif ATYP_C2 == b'\x03':
+        Constants.DST_ADDR_LEN_C2 = data[4:5]
         DST_ADDR_LEN_C2 = data[4]
         Debug.log("目标地址长度:", DST_ADDR_LEN_C2)
         DST_ADDR_C2 = data[5:5 + DST_ADDR_LEN_C2]
@@ -109,6 +110,16 @@ def ss5forward(data, conn):
         DST_ADDR_C2 = data[4:20]
         DST_PORT_C2 = data[20:22]
         target_host = socket.inet_ntoa(struct.pack('!L', int(DST_ADDR_C2.hex(), 16)))
+
+    # 如果需要前置代理，记录此信息
+    if Constants.proxy:
+        Debug.log('使用前置代理先保留客户端交互信息')
+        Constants.VER_C2 = VER_C2
+        Constants.CMD_C2 = CMD_C2
+        Constants.RSV_C2 = RSV_C2
+        Constants.ATYP_C2 = ATYP_C2
+        Constants.DST_ADDR_C2 = DST_ADDR_C2
+        Constants.DST_PORT_C2 = DST_PORT_C2
 
     Debug.log("目标地址:", DST_ADDR_C2)
     # Debug.log("目标端口:", DST_PORT_C2)

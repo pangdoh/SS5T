@@ -24,14 +24,6 @@ def parse_urls(url):
     return proto, host, port, path, query
 
 
-proto, host, port, path, query = parse_urls('http://www.baidu.com/123/abc/456')
-print("proto:", proto)
-print("host:", host)
-print("port:", port)
-print("path:", path)
-print("query:", query)
-
-
 class Debug:
 
     @staticmethod

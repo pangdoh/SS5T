@@ -1,15 +1,23 @@
 import socket
 import threading
 from utils import Debug
+from core import Constants
+from core.protos import ss5clt
 
 
 # 转发数据
 def forward_data(conn, target_host, target_port):
-    # 定义变量
+
+    # 创建连接对象
     s = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-    s.settimeout(8)
-    clt_conn_flag = True
-    forward_recv_flag = True
+    s.settimeout(10)
+
+    if Constants.proxy:
+        clt_conn_flag = False
+        forward_recv_flag = False
+    else:
+        clt_conn_flag = True
+        forward_recv_flag = True
 
     while True:
         try:
@@ -22,19 +30,24 @@ def forward_data(conn, target_host, target_port):
         if not tmp_data:
             break
         else:
-            if clt_conn_flag:
-                clt_conn_flag = False
-                # 与目标建立连接
-                s.connect((target_host, target_port))
+            # 是否需要前置代理
+            if Constants.proxy:
+                ss5clt.ss5forward(tmp_data, s, conn)
+            else:
+                if clt_conn_flag:
+                    clt_conn_flag = False
+                    # 与目标建立连接
+                    s.connect((target_host, target_port))
 
-            # 转发数据
-            s.send(tmp_data)
+                if Constants.proxy is None:
+                    # 转发数据
+                    s.send(tmp_data)
 
-            if forward_recv_flag:
-                forward_recv_flag = False
-                # 接收请求
-                tr = threading.Thread(target=forward_recv, args=(s, conn))
-                tr.start()
+                if forward_recv_flag:
+                    forward_recv_flag = False
+                    # 接收请求
+                    tr = threading.Thread(target=forward_recv, args=(s, conn))
+                    tr.start()
 
     # 关闭目标连接
     Debug.log("关闭目标连接")
@@ -49,7 +62,7 @@ def forward_data(conn, target_host, target_port):
 def forward_recv(s, conn):
     while True:
         try:
-            tmp_data = s.recv(1024)
+            tmp_data = s.recv(4096)
             Debug.log('响应3:', tmp_data)
             if not tmp_data:
                 break
@@ -64,8 +77,3 @@ def forward_recv(s, conn):
         except socket.timeout:
             Debug.log('timeout')
             break
-    Debug.log("子线程关闭连接")
-    try:
-        s.close()
-    finally:
-        conn.close()
