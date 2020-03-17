@@ -34,7 +34,12 @@ def wait_connect(conn, address):
             client_list_lock.acquire()
             client_list.append((conn, address))
             client_list_lock.release()
-        execute(conn)
+
+        try:
+            execute(conn)
+        except Exception as e:
+            print(e)
+
         if Constants.debug:
             # 移除连接列表
             client_list_lock.acquire()
@@ -42,8 +47,6 @@ def wait_connect(conn, address):
             print("当前连接：", client_list)
             print("数量：", len(client_list))
             client_list_lock.release()
-        # 关闭连接
-        conn.close()
 
 
 def execute(conn):
@@ -63,5 +66,3 @@ def execute(conn):
     elif version == 4:
         # 使用socks4协议
         ss4.ss4forward(data, conn)
-
-

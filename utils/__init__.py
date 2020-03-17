@@ -16,6 +16,8 @@ def parse_urls(url):
             port = 80
         elif proto == "https":
             port = 443
+        else:
+            port = 0
     host = dst[0]
     path = up.path
     query = up.query

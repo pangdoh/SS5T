@@ -5,6 +5,7 @@ class Constants:
     proxy = None
     auth = None
     debug = None
+    debug_dev = None
     auth_usr_lst = None
     VER_C2 = None
     CMD_C2 = None

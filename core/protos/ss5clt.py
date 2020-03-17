@@ -1,10 +1,9 @@
-from core import protocmsd
 from utils import Debug
 from core import Constants
 
 
 # ss5转发
-def ss5forward(data, s, conn):
+def ss5conn(s):
     proxy = Constants.proxy
     proxy_address = proxy.get('proxy_address')
     proxy_port = proxy.get('proxy_port')
@@ -46,18 +45,14 @@ def ss5forward(data, s, conn):
             req2 = Constants.VER_C2 + Constants.CMD_C2 + Constants.RSV_C2 + Constants.ATYP_C2 + Constants.DST_ADDR_LEN_C2 +Constants.DST_ADDR_C2 + Constants.DST_PORT_C2
         else:
             req2 = Constants.VER_C2 + Constants.CMD_C2 + Constants.RSV_C2 + Constants.ATYP_C2 + Constants.DST_ADDR_C2 + Constants.DST_PORT_C2
-        Debug.log('发送连接目标req2：', req2)
+        Debug.log('发送连接信息至前置代理req：', req2)
         s.send(req2)
 
         res2 = s.recv(512)
-        Debug.log('服务端返回res2:', res2)
+        Debug.log('前置代理返回res2:', res2)
         if res2.startswith(b'\x05\x00'):
-            Debug.log('开始向前置代理发送数据:', data)
-            s.send(data)
-
-            # 接收并返回
-            protocmsd.forward_recv(s, conn)
-
+            # ss5连接握手成功
+            Debug.log('ss5连接握手成功')
         else:
             print("前置代理连接过程阶段二发生错误！停止访问！")
 

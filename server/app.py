@@ -26,9 +26,10 @@ daemon = args.daemon
 # 日志
 print("Listening %s:%d" % (bind_address, bind_port))
 
+# debug = True
 # 研发过程默认开启debug
-debug = True
-# proxy = '192.168.0.104:1899'
+proxy = 'admin:123456@192.168.0.104:1899'
+# auth = "admin:123"
 
 # 设置前置代理信息
 if proxy:
