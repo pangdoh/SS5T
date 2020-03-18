@@ -26,6 +26,20 @@ def parse_urls(url):
     return proto, host, port, path, query
 
 
+# 数字类型IP地址转换为字符串
+def ip_int2str(num):
+    s = []
+    for i in range(4):
+        s.append(str(num % 256))
+        num /= 256
+    result = ''
+    for i in s[::-1]:
+        result += str(int(float(i))) + '.'
+    if result.endswith('.'):
+        result = result[:-1]
+    return result
+
+
 class Debug:
 
     @staticmethod

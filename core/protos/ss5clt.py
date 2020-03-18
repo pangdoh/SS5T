@@ -42,9 +42,9 @@ def ss5conn(s):
 
     if proxy_continue:
         if Constants.ATYP_C2 == b'\x03':
-            req2 = Constants.VER_C2 + Constants.CMD_C2 + Constants.RSV_C2 + Constants.ATYP_C2 + Constants.DST_ADDR_LEN_C2 +Constants.DST_ADDR_C2 + Constants.DST_PORT_C2
+            req2 = b'\x05' + b'\x01' + b'\x00' + Constants.ATYP_C2 + Constants.DST_ADDR_LEN_C2 +Constants.DST_ADDR_C2 + Constants.DST_PORT_C2
         else:
-            req2 = Constants.VER_C2 + Constants.CMD_C2 + Constants.RSV_C2 + Constants.ATYP_C2 + Constants.DST_ADDR_C2 + Constants.DST_PORT_C2
+            req2 = b'\x05' + b'\x01' + b'\x00' + Constants.ATYP_C2 + Constants.DST_ADDR_C2 + Constants.DST_PORT_C2
         Debug.log('发送连接信息至前置代理req：', req2)
         s.send(req2)
 

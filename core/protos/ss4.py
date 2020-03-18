@@ -1,4 +1,5 @@
 from core import protocmsd
+from core import Constants
 from utils import Debug
 import socket
 import struct
@@ -15,8 +16,15 @@ def ss4forward(data, conn):
     dst_port = int(DSTPORT_C.hex(), 16)
     if DSTIP_C == b'\x00\x00\x00\x01':
         dspip = USERID_C[1:].decode()
+        Constants.ATYP_C2 = b'\x03'
+        Constants.DST_ADDR_LEN_C2 = len(USERID_C[1:]).to_bytes(1, 'big')
+        Constants.DST_ADDR_C2 = USERID_C[1:]
     else:
         dspip = socket.inet_ntoa(struct.pack('!L', int(DSTIP_C.hex(), 16)))
+        Constants.ATYP_C2 = b'\x01'
+        Constants.DST_ADDR_C2 = DSTIP_C
+
+    Constants.DST_PORT_C2 = DSTPORT_C
 
     Debug.log('VN', VN_C)
     Debug.log('CD', CD_C)

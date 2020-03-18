@@ -3,6 +3,7 @@ from core import Constants
 import socket
 import struct
 from utils import Debug
+import utils
 
 
 def ss5forward(data, conn):
@@ -98,6 +99,7 @@ def ss5forward(data, conn):
         DST_ADDR_C2 = data[4:8]
         DST_PORT_C2 = data[8:10]
         target_host = socket.inet_ntoa(struct.pack('!L', int(DST_ADDR_C2.hex(), 16)))
+        # target_host = utils.ip_int2str(int(DST_ADDR_C2.hex(), 16))
     elif ATYP_C2 == b'\x03':
         Constants.DST_ADDR_LEN_C2 = data[4:5]
         DST_ADDR_LEN_C2 = data[4]
@@ -109,7 +111,8 @@ def ss5forward(data, conn):
         Debug.log('使用ipv6')
         DST_ADDR_C2 = data[4:20]
         DST_PORT_C2 = data[20:22]
-        target_host = socket.inet_ntoa(struct.pack('!L', int(DST_ADDR_C2.hex(), 16)))
+        # target_host = socket.inet_ntoa(struct.pack('!L', int(DST_ADDR_C2.hex(), 16)))
+        target_host = utils.ip_int2str(int(DST_ADDR_C2.hex(), 16))
 
     # 如果需要前置代理，记录此信息
     if Constants.proxy:
