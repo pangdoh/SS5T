@@ -2,7 +2,9 @@ import socket
 import threading
 from core.protos import ss5, ss4
 from core import Constants
+from core import ConnVariable
 from utils import Debug
+from utils.encrypt import asymmetric, symmetric
 
 
 def start():
@@ -50,9 +52,33 @@ def wait_connect(conn, address):
 
 
 def execute(conn):
+    conn_box = ConnVariable(conn)
+
+    # 判断是否需要和客户端进行加密传输
+    if Constants.local_ssl:
+        # 接收公钥
+        data = conn.recv(1024)
+        Debug.log('接收公钥：', data)
+        conn_box.client_public_key = data
+        # 发送公钥
+        conn.send(Constants.publicKey)
+        # 接收随机密钥
+        clt_random_key = conn.recv(512)
+        Debug.log("接收随机密钥：", clt_random_key)
+        # 设置客户端结束标记
+        conn_box.clt_end_flag = clt_random_key
+        # 解密随机密钥
+        clt_random_key = symmetric.decrypt(clt_random_key, Constants.privateKey)
+        Debug.log("解密随机密钥：", clt_random_key)
+        conn_box.clt_random_key = clt_random_key
+
     # 接收
     data = conn.recv(512)
     Debug.log("接收1: %s" % data)
+    if Constants.local_ssl:
+        # 对称解密
+        data = asymmetric.decrypt(data, conn_box.clt_random_key)
+        Debug.log('对称解密接收1:', data)
 
     version = 5
     # 检查协议
@@ -62,7 +88,7 @@ def execute(conn):
 
     if version == 5:
         # 使用socks5协议
-        ss5.ss5forward(data, conn)
+        ss5.ss5forward(data, conn, conn_box)
     elif version == 4:
         # 使用socks4协议
-        ss4.ss4forward(data, conn)
+        ss4.ss4forward(data, conn, conn_box)

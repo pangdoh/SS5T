@@ -4,6 +4,8 @@ import time
 
 from core import Constants
 from core import runserver
+from utils.encrypt import asymmetric
+from utils.encrypt import symmetric
 
 # 命令行参数解析对象
 parser = argparse.ArgumentParser()
@@ -11,6 +13,11 @@ parser.add_argument('-host', dest='bind_address', default='0.0.0.0', help='Liste
 parser.add_argument('-port', dest='bind_port', type=int, default=1899, help='Listen Port(default=%d)' % 1899)
 parser.add_argument('-auth', dest='auth', help='User authentication, -auth /etc/users')
 parser.add_argument('-proxy', dest='proxy', help='Preposition proxy. eg. -proxy user1:pass1@10.0.0.2:1088')
+parser.add_argument('-C', dest='publicKey', help='Public key')
+parser.add_argument('-K', dest='privateKey', help='Private Key')
+parser.add_argument('--localssl', dest='localssl', help='Local encryption', action='store_true')
+parser.add_argument('--remotessl', dest='remotessl', help='Remote encryption', action='store_true')
+parser.add_argument('--generateKey', dest='generateKey', help='Generate asymmetric key: private.pem, public.pem', action='store_true')
 parser.add_argument('--debug', dest='debug', help='Start by Debug', action='store_true')
 parser.add_argument('--daemon', dest='daemon', help='Start by Daemons', action='store_true')
 
@@ -20,15 +27,58 @@ bind_address = args.bind_address
 bind_port = args.bind_port
 auth = args.auth
 proxy = args.proxy
+publicKey = args.publicKey
+privateKey = args.privateKey
+local_ssl = args.localssl
+remote_ssl = args.remotessl
+generateKey = args.generateKey
 debug = args.debug
 daemon = args.daemon
+
+# 生成加密密钥
+if generateKey:
+    print("正在生成密钥...")
+    symmetric.generate_key()
+    print("生成密钥：private.pem, public.pem 完成")
+    exit(0)
+
+# 输入加密参数校验
+if local_ssl or remote_ssl:
+    if not publicKey or not privateKey:
+        print("正在生成密钥...")
+        public_key, private_key = symmetric.generate_temp_key()
+        print("生成密钥：private.pem, public.pem 完成")
+        Constants.publicKey = public_key
+        Constants.privateKey = private_key
+
+    if remote_ssl:
+        # 生成随机密钥
+        random_key = asymmetric.generate_key()
+        Constants.random_key = random_key
+
+if publicKey and privateKey:
+    if not remote_ssl:
+        local_ssl = True
+
+    with open(publicKey, "rb") as x:
+        c = x.read()
+    Constants.publicKey = c
+    with open(privateKey, "rb") as x:
+        k = x.read()
+    Constants.privateKey = k
+
+if local_ssl:
+    print("--启动本地加密传输--")
+    Constants.local_ssl = True
+if remote_ssl:
+    print("--启动远端加密传输--")
+    Constants.remote_ssl = True
 
 # 日志
 print("Listening %s:%d" % (bind_address, bind_port))
 
-debug = True
 # 研发过程默认开启debug
-proxy = 'admin:123456@192.168.0.100:1899'
+proxy = 'admin:123456@192.168.0.102:1899'
 # auth = "admin:123"
 
 # 设置前置代理信息
