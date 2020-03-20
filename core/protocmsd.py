@@ -134,7 +134,6 @@ def forward_recv(s, conn, conn_box):
             Debug.log('ConnectionAbortedError')
             break
         except OSError:
-            Debug.log("OSError")
             break
         except socket.timeout:
             Debug.log('timeout')

@@ -5,7 +5,7 @@ import utils
 from core import Constants
 from core import protocmsd
 from utils import Debug
-from utils.encrypt import asymmetric
+from utils.encrypt import asymmetric, symmetric
 
 
 def ss5forward(data, conn, conn_box):
@@ -40,9 +40,10 @@ def ss5forward(data, conn, conn_box):
     res1 = VER_C1 + METHODS_D1
     Debug.log("响应1: %s" % res1)
     if Constants.local_ssl:
-        # 对称加密
-        res1 = asymmetric.encrypt(res1, conn_box.clt_random_key)
-        Debug.log('对称加密res1:', res1)
+        # 非对称加密
+        # res1 = asymmetric.encrypt(res1, conn_box.clt_random_key)
+        res1 = symmetric.encrypt(res1, conn_box.client_public_key)
+        Debug.log('非对称加密res1:', res1)
     conn.send(res1)
     Debug.log("----------------------第一次交互完毕------------------------------")
 
@@ -54,8 +55,9 @@ def ss5forward(data, conn, conn_box):
             Debug.log('----------需要认证------------')
             data = conn.recv(512)
             if Constants.local_ssl:
-                # 对称解密
-                data = asymmetric.decrypt(data, conn_box.clt_random_key)
+                # 非对称解密
+                # data = asymmetric.decrypt(data, conn_box.clt_random_key)
+                data = symmetric.decrypt(data, Constants.privateKey)
                 Debug.log('对称解密认证信息:', data)
             auth_version = data[0:1]
             ulen = int(data[1:2].hex(), 16)
@@ -91,9 +93,10 @@ def ss5forward(data, conn, conn_box):
 
         Debug.log('响应认证', res_auth)
         if Constants.local_ssl:
-            # 对称加密
-            res_auth = asymmetric.encrypt(res_auth, conn_box.clt_random_key)
-            Debug.log('对称加密res_auth:', res_auth)
+            # 非对称加密
+            # res_auth = asymmetric.encrypt(res_auth, conn_box.clt_random_key)
+            res_auth = symmetric.encrypt(res_auth, conn_box.client_public_key)
+            Debug.log('非对称加密res_auth:', res_auth)
         conn.send(res_auth)
 
         Debug.log('----------认证结束------------')
@@ -102,9 +105,10 @@ def ss5forward(data, conn, conn_box):
     data = conn.recv(512)
     Debug.log("接收2: %s" % data)
     if Constants.local_ssl:
-        # 对称解密
-        data = asymmetric.decrypt(data, conn_box.clt_random_key)
-        Debug.log('对称解密接收2:', data)
+        # 非对称解密
+        # data = asymmetric.decrypt(data, conn_box.clt_random_key)
+        data = symmetric.decrypt(data, Constants.privateKey)
+        Debug.log('非对称解密接收2:', data)
     VER_C2 = data[0:1]
     CMD_C2 = data[1:2]
     RSV_C2 = data[2:3]
@@ -153,7 +157,8 @@ def ss5forward(data, conn, conn_box):
     Debug.log("响应2: %s" % res2)
     if Constants.local_ssl:
         # 对称加密
-        res2 = asymmetric.encrypt(res2, conn_box.clt_random_key)
+        # res2 = asymmetric.encrypt(res2, conn_box.clt_random_key)
+        res2 = symmetric.encrypt(res2, conn_box.client_public_key)
         Debug.log('对称加密res1:', res2)
     conn.send(res2)
 

@@ -4,7 +4,7 @@ from core.protos import ss5, ss4
 from core import Constants
 from core import ConnVariable
 from utils import Debug
-from utils.encrypt import asymmetric, symmetric
+from utils.encrypt import symmetric
 
 
 def start():
@@ -37,10 +37,12 @@ def wait_connect(conn, address):
             client_list.append((conn, address))
             client_list_lock.release()
 
-        try:
+            try:
+                execute(conn)
+            except Exception as e:
+                print(e)
+        else:
             execute(conn)
-        except Exception as e:
-            print(e)
 
         if Constants.debug:
             # 移除连接列表
@@ -79,9 +81,10 @@ def execute(conn):
     data = conn.recv(512)
     Debug.log("接收1: %s" % data)
     if Constants.local_ssl:
-        # 对称解密
-        data = asymmetric.decrypt(data, conn_box.clt_random_key)
-        Debug.log('对称解密接收1:', data)
+        # 非对称解密
+        # data = asymmetric.decrypt(data, conn_box.clt_random_key)
+        data = symmetric.decrypt(data, Constants.privateKey)
+        Debug.log('非对称解密接收1:', data)
 
     version = 5
     # 检查协议

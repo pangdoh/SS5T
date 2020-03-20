@@ -3,10 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="8b24d4c0-89e4-4745-8c9e-9798d8783702" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/protocmsd.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/protocmsd.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/protos/ss5.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/protos/ss5.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/protos/ss5clt.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/protos/ss5clt.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/runserver.py" beforeDir="false" afterPath="$PROJECT_DIR$/core/runserver.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/app.py" beforeDir="false" afterPath="$PROJECT_DIR$/server/app.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/可执行程序/centos/app" beforeDir="false" afterPath="$PROJECT_DIR$/可执行程序/centos/app" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/可执行程序/windows/app.exe" beforeDir="false" afterPath="$PROJECT_DIR$/可执行程序/windows/app.exe" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -16,53 +16,7 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/server/app.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="297">
-              <caret line="87" column="15" lean-forward="true" selection-start-line="87" selection-start-column="15" selection-end-line="87" selection-end-column="15" />
-              <folding>
-                <element signature="e#0#15#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/protos/ss5clt.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="19">
-              <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/runserver.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="202">
-              <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/core/protocmsd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2204">
-              <caret line="146" column="13" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="13" />
-              <folding>
-                <element signature="e#0#13#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -73,23 +27,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mode</find>
-      <find>data</find>
-      <find>iv</find>
-      <find>d6as5d67as567d4s4d7as8d6as89d698asd9as78d5as78d5as89d578as54das78d578as5d8s48as57858f75a785f78asf78as65d78fa7s86da</find>
-      <find>b'fmM/\x0f\xa2+I\xbb\xfev\xed\xc6\x1e\xdcv'</find>
-      <find>ConnVariable</find>
-      <find>Constants</find>
-      <find>d6as5d67as567d4s4d7as8d6as89d698asd954das78d578as5d8s48as57858f75a785f78asf78as65d78fa7s86da</find>
-      <find>AesEncryption</find>
-      <find># 对称</find>
-      <find>remote_ssl</find>
-      <find>remo</find>
-      <find>clt_random_key</find>
-      <find>local_ssl</find>
-      <find>ipv</find>
-      <find>3cdfe8e41719fa1b4954e2a7f36a3cef8ed38d8d5994495f5d5bad1f314475b11412bd07db217f73d700620f469e243a000f</find>
-      <find>b'0c1c0319c60aa9fcdfbfaf7deefb8c0dd1cefc785f1e70cc0dd5c999ce1ea685ab40cfb0cd9528693744f58458ff1103344987b74cb46e24717e451fe379a2a6d09b1f0d6a6b5ab6c3ca4268b0f1b82a5006fe735a724bddca947546c2071be545e92cf6d88ff8f146ac51eae29d6dfe1301e9373d3acc3ee2d48803a9b1c46ceb62352ed1d7d865bf6ed8816fff78cb159e53c995b6650480517f98d24a149164d9ab7caf49d8db72d9327f0dec520ae6aeb5de2fd499644b951e598dc889a27bc1b853abceab7b65cac992078a1c73f8c3c658f3d1ce088c2ddd884b385a505bae215c610b1f1d25e99c855c698464cd88eb55e87d6096aca5c33fb019b6fb20126c4cbdbef5d16443186d9c89fc2e03ea48bafb5b2345efbd3216bdb5760d69558b8e617a2238172457a8f500265eb974283794c5c4c6e48b7ce836978bc9286714997d8a523e474ea746015110be0044896c498795eb07d17384043b77355a51aeec12f4e5ee10597c0780087a4af1640e5682ea92ef349678d81bdb246baa7e07c37d4d4587fce262ecb45b686f6c4c7ec9429fdd5b6e678b86a0cf1206ae7983125aa1e97b159ff22d7e860d6f676a010e1c94e0daf50d0448024664ff9927234385ea1251426a62be108583a8e886cff5305c9ff0b8a9f0b5bed28cae394e9d8139a877c1d9262e194294fd0895b7e4fed14f39ecdadeeb6c19b89a3a9cd08b7bf808e33aa592a98c7921c9171e0271f510659636595040121d37e6fd432100dbe25aa2180d1925bcb52cccf8992b6a1288e567ad546cfe329a02d815e37fb38185b02598869903e453feb58cefc0a362edecc803a46152479b406a80857ca2769e789f3b956fada41eb2979810f4e7613521d066a625ac460d6e4aa75e405124c96ff5926fdb494d85fde74823ac6925ad177b70e2a39f7430831dc39ee845d678c047f71b06950e80d7f69badbaded7034dbc5075472c5f70b96c194b5e3d74733864a622ed696e0f67cb95304e419fe6f6291b6c7ed5f587ba9f1768c6684038d36aa5609cb858d6f7277dfe459e661aa494e4a90a4ea7de7d96261f6eda52c228ddc4f38c583ce60f12c567d4e4a3927034aa0120f69a3ab49330e7ef1909a4a2815edc458337326e0acdb27c9cef9f8b7d593782f6314f971d87f89efbc5dc8d6528e04c402a5494d3046ff5e9083eeb2e696a0ca4d1d198a311acdd2cd07ddd50e42f0d6842e29afda168907003afeaae2918a1da1ef9c961a00f6539a5ae4e49a3589b83fea141298a4d6854fcbc36cc0be96a03412203324c7ed42c927f0fefc31b828e9242fd9fb54565bc8c75347eb7abf91133cc061e8210023154d65975e9ffe4d8de3a4e4cbc033efcd8095a7eb8ca3ed0739bdd6d1546a1ae6dd3be8ea5a0298a358aee699f97241ecfedc48ad5e4df1921a23872894fb0b64cc2e981b7bf56286741f7e0c160216db1cf385ac52080d0d23220106f30ed6a779a4f1dcefe9f4917bb45e187a58429bf21508a2d68ff3f3ecd5c4fbf6864e58ce9681cb6d3f67bc28b12c61358de550a5ef94cb818b6129e0f5e3d69e7ac848b2fbe0de54be281e099ed1875985569edd1d9431ec4880a1edc70712d7effe7721f9fa341baae952a943d59c291c6c226f1dd6eabb23247bdc0adaaca11ba0841eadbae28a3d71f756ddf4eb0f714a9b3a08ec057d0237cd57e9028fb466a02af4467fab97bfc384b75fd7a22bb03dd63777060d6e65df0df892cdd8f8717e4d9dd1590973676285363250a045e3fd84b2e7f95e426f0108f1a14f83ced4b65287e9878a5c910ba914d7dcaed733501b675d8f13fc1e5a28e4cea5c42d326b0695b1fe6f686dbd59ea1ce4dab7e0620d80212749ffcf03a723a3581d1c5e570f9cdbaaa97b8d8abe1d2aee24850409f1d15ecfb00c6cf3fcc651a8f8734f5aefb74bbd8c859cf00e8d13af47e991a502970e0441f6fd8ec5b39c61af25e7ad696842a261b0868cfbe38ca2854bb760a3541aa</find>
       <find>047afc759d5ade195438efcebff45c1426bb427b08901f3f6cd3515f993568a9765831decdd98a4bcb417311116967e71e159bb5bd86ac366f69d6b0b69a327bc81831076d3f535e743230f950c8f22de9cce7d5ef8f3accba30e22685da65f1fc3f3d8ab6093897b9fc19868aaa183e18fd7faabd5fe50818e56c9d1601</find>
       <find>07564fd5b0ed22780999d4d9b4a480510044c65a54be7be9d958b1a33a473eac8dcdf864823f57c722723093d53cd0a9190c69e358bf8</find>
       <find>publicKey</find>
@@ -103,6 +40,23 @@
       <find>print</find>
       <find>b'-----BEGIN RSA PUBLIC KEY-----'</find>
       <find>'-----BEGIN RSA PUBLIC KEY-----</find>
+      <find>s.send</find>
+      <find>clt_public_key</find>
+      <find>client_pub</find>
+      <find>asymmetric</find>
+      <find>client</find>
+      <find>client_public_key</find>
+      <find>OSError</find>
+      <find>关闭连接</find>
+      <find>发送公钥</find>
+      <find>tmp_pub_key</find>
+      <find>res1</find>
+      <find>recv</find>
+      <find>11111111111</find>
+      <find>111111</find>
+      <find>256</find>
+      <find>while True:</find>
+      <find>s.recv(</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -133,17 +87,17 @@
         <option value="$PROJECT_DIR$/core/encryption/__init__.py" />
         <option value="$PROJECT_DIR$/utils/encrypt/test.py" />
         <option value="$PROJECT_DIR$/core/protos/ss4.py" />
-        <option value="$PROJECT_DIR$/core/protos/ss5.py" />
         <option value="$PROJECT_DIR$/test/4.py" />
         <option value="$PROJECT_DIR$/core/__init__.py" />
-        <option value="$PROJECT_DIR$/core/protocmsd.py" />
         <option value="$PROJECT_DIR$/utils/encrypt/asymmetric.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/utils/encrypt/symmetric.py" />
+        <option value="$PROJECT_DIR$/server/app.py" />
+        <option value="$PROJECT_DIR$/core/protos/ss5.py" />
+        <option value="$PROJECT_DIR$/core/protocmsd.py" />
         <option value="$PROJECT_DIR$/core/runserver.py" />
         <option value="$PROJECT_DIR$/core/protos/ss5clt.py" />
-        <option value="$PROJECT_DIR$/server/app.py" />
       </list>
     </option>
   </component>
@@ -168,6 +122,28 @@
               <item name="SS5T" type="b2602c69:ProjectViewProjectNode" />
               <item name="SS5T" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="SS5T" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SS5T" type="462c0819:PsiDirectoryNode" />
+              <item name="server" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SS5T" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SS5T" type="462c0819:PsiDirectoryNode" />
+              <item name="可执行程序" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SS5T" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SS5T" type="462c0819:PsiDirectoryNode" />
+              <item name="可执行程序" type="462c0819:PsiDirectoryNode" />
+              <item name="centos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SS5T" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SS5T" type="462c0819:PsiDirectoryNode" />
+              <item name="可执行程序" type="462c0819:PsiDirectoryNode" />
+              <item name="windows" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -178,22 +154,22 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="ignore_missing_gitignore" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/可执行程序/windows" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/可执行程序/centos" />
     <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="F:\Git\GitHub\SS5T\可执行程序\windows" />
+      <recent name="F:\Git\GitHub\SS5T\可执行程序\centos" />
+      <recent name="F:\Git\GitHub\SS5T\core" />
+      <recent name="F:\Git\GitHub\SS5T\test" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\Git\GitHub\SS5T\可执行程序\windows" />
       <recent name="F:\Git\GitHub\SS5T\可执行程序\centos" />
       <recent name="F:\Git\GitHub\SS5T\可执行程序" />
       <recent name="F:\Git\GitHub\SS5T\utils\encrypt" />
       <recent name="F:\Git\GitHub\SS5T\server" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="F:\Git\GitHub\SS5T\可执行程序\windows" />
-      <recent name="F:\Git\GitHub\SS5T\可执行程序\centos" />
-      <recent name="F:\Git\GitHub\SS5T\core" />
-      <recent name="F:\Git\GitHub\SS5T\test" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -349,13 +325,20 @@
       <option name="project" value="LOCAL" />
       <updated>1584674942268</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="代码整理">
+      <created>1584681707422</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1584681707422</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.24966975" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -366,7 +349,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.3286119" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.26628897" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.26628897" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -405,26 +388,8 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/core/protos/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/client/core.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="78" column="18" selection-start-line="78" selection-start-column="18" selection-end-line="78" selection-end-column="18" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/app.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="14" column="26" lean-forward="true" selection-start-line="14" selection-start-column="26" selection-end-line="14" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#15#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/core.py" />
+    <entry file="file://$PROJECT_DIR$/client/app.py" />
     <entry file="file://$PROJECT_DIR$/client/test/1.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="26">
@@ -435,9 +400,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/system/proxy.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/system/proxy.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-516756811/builtins.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="263">
@@ -452,13 +415,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/utils.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="25" column="65" selection-start-line="25" selection-start-column="65" selection-end-line="25" selection-end-column="65" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/client/utils.py" />
     <entry file="file://$USER_HOME$/.PyCharmCE2019.1/system/python_stubs/-516756811/_socket.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="187">
@@ -510,13 +467,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/server/public.pem">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="57">
-          <caret line="3" column="38" selection-start-line="3" selection-start-column="38" selection-end-line="3" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/public.pem" />
     <entry file="file://$PROJECT_DIR$/core/encryption/en4rsa.py" />
     <entry file="file://$PROJECT_DIR$/core/encryption/__init__.py" />
     <entry file="file://D:/Python/Python36/Lib/site-packages/Cryptodome/Cipher/AES.py">
@@ -526,22 +477,9 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/encrypt/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="33" column="49" lean-forward="true" selection-start-line="33" selection-start-column="49" selection-end-line="33" selection-end-column="49" />
-          <folding>
-            <element signature="e#9#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/encrypt/public.pem">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/utils/encrypt/private.pem">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/encrypt/test.py" />
+    <entry file="file://$PROJECT_DIR$/utils/encrypt/public.pem" />
+    <entry file="file://$PROJECT_DIR$/utils/encrypt/private.pem" />
     <entry file="file://$PROJECT_DIR$/core/protos/ss4.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="76">
@@ -566,30 +504,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/core/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="296">
-          <caret line="35" column="13" selection-start-line="35" selection-start-column="13" selection-end-line="35" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/protos/ss5.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="260">
-          <caret line="163" column="20" selection-start-line="163" selection-start-column="20" selection-end-line="163" selection-end-column="20" />
-          <folding>
-            <element signature="e#0#13#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server/private.pem">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="114">
-          <caret line="6" selection-start-line="6" selection-end-line="7" selection-end-column="64" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/server/private.pem" />
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -637,13 +552,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/utils/encrypt/symmetric.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="354">
-          <caret line="36" selection-start-line="36" selection-end-line="36" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="171">
@@ -651,10 +559,51 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/core/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="430">
+          <caret line="32" column="30" selection-start-line="32" selection-start-column="13" selection-end-line="32" selection-end-column="30" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/protos/ss5.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="19">
+          <caret line="147" lean-forward="true" selection-start-line="147" selection-end-line="147" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/core/protocmsd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2204">
-          <caret line="146" column="13" selection-start-line="146" selection-start-column="8" selection-end-line="146" selection-end-column="13" />
+        <state relative-caret-position="245">
+          <caret line="141" column="25" selection-start-line="141" selection-start-column="25" selection-end-line="141" selection-end-column="25" />
+          <folding>
+            <element signature="e#0#13#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://D:/Python/Python36/Lib/site-packages/rsa/transform.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="141">
+          <caret line="42" selection-start-line="42" selection-end-line="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/utils/encrypt/symmetric.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="291">
+          <caret line="35" selection-start-line="35" selection-end-line="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/core/runserver.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="70">
+          <caret line="34" column="20" lean-forward="true" selection-start-line="34" selection-start-column="20" selection-end-line="34" selection-end-column="20" />
           <folding>
             <element signature="e#0#13#0" expanded="true" />
           </folding>
@@ -663,25 +612,18 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/core/protos/ss5clt.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="19">
-          <caret line="1" column="14" selection-start-line="1" selection-start-column="14" selection-end-line="1" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/core/runserver.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="202">
-          <caret line="64" column="20" selection-start-line="64" selection-start-column="20" selection-end-line="64" selection-end-column="20" />
+        <state relative-caret-position="36">
+          <caret line="43" column="16" selection-start-line="43" selection-start-column="16" selection-end-line="43" selection-end-column="16" />
           <folding>
-            <element signature="e#0#13#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/server/app.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="297">
-          <caret line="87" column="15" lean-forward="true" selection-start-line="87" selection-start-column="15" selection-end-line="87" selection-end-column="15" />
+        <state relative-caret-position="1019">
+          <caret line="126" column="44" lean-forward="true" selection-start-line="126" selection-start-column="44" selection-end-line="126" selection-end-column="44" />
           <folding>
             <element signature="e#0#15#0" expanded="true" />
           </folding>
