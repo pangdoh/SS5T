@@ -34,15 +34,3 @@ def encrypt(data, key):
 def decrypt(data, key):
     rsa_private_key = rsa.PrivateKey.load_pkcs1(key)
     return rsa.decrypt(data, rsa_private_key)
-
-# test
-# generate_key()
-# public_key, private_key = generate_temp_key()
-# print(public_key, private_key)
-# a = b'fmM/\x0f\xa2+I\xbb\xfev\xed\xc6\x1e\xdcv'
-# # a = b'123asdafaaaaaaaareqwrqdasggfsdczxcqweeasdsadsdaeqwrsd213'
-# a = encrypt(a)
-# print(a)
-# print(len(a))
-# a = decrypt(a)
-# print(a)

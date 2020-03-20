@@ -78,7 +78,7 @@ if remote_ssl:
 print("Listening %s:%d" % (bind_address, bind_port))
 
 # 研发过程默认开启debug
-proxy = 'admin:123456@192.168.0.102:1899'
+proxy = 'admin:123456@192.168.0.103:1899'
 # auth = "admin:123"
 
 # 设置前置代理信息

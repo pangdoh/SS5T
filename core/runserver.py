@@ -23,7 +23,7 @@ def start():
     sem = threading.Semaphore(current_num)
     while True:
         conn, address = s.accept()
-        conn.settimeout(8)
+        conn.settimeout(10)
         print("连接地址: %s" % str(address))
         t = threading.Thread(target=wait_connect, args=(conn, address,))
         t.start()
