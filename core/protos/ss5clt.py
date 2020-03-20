@@ -15,12 +15,19 @@ def ss5conn(s, conn_box):
 
     if Constants.remote_ssl:
         # 发送公钥
-        Debug.log("发送公钥：", Constants.publicKey)
-        s.send(Constants.publicKey)
-        # 接收公钥
+        tmp_pub_key = Constants.publicKey[31:-30]
+        Debug.log("发送公钥：", tmp_pub_key)
+        s.send(tmp_pub_key)
+        # 接收加密公钥
         data = s.recv(1024)
         Debug.log('接收公钥：', data)
-        conn_box.server_public_key = data
+        # 解密公钥
+        tmp_ser_pub_key_1 = symmetric.decrypt(data[:128], Constants.privateKey)
+        tmp_ser_pub_key_2 = symmetric.decrypt(data[128:], Constants.privateKey)
+        conn_box.server_public_key = b'-----BEGIN RSA PUBLIC KEY-----\n' \
+                                     + tmp_ser_pub_key_1 \
+                                     + tmp_ser_pub_key_2 \
+                                     + b'\n-----END RSA PUBLIC KEY-----\n'
         # # 生成随机密钥
         # random_key = asymmetric.generate_key()
         # 获取随机密钥

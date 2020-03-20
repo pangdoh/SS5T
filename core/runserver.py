@@ -59,11 +59,14 @@ def execute(conn):
         # 接收公钥
         data = conn.recv(1024)
         Debug.log('接收公钥：', data)
-        conn_box.client_public_key = data
-        # 发送公钥
-        conn.send(Constants.publicKey)
+        conn_box.client_public_key = b'-----BEGIN RSA PUBLIC KEY-----\n' + data + b'\n-----END RSA PUBLIC KEY-----\n'
+        # 发送加密公钥
+        tmp_pub_key = Constants.publicKey[31:-30]
+        tmp_pub_key_1 = symmetric.encrypt(tmp_pub_key[:100], conn_box.client_public_key)
+        tmp_pub_key_2 = symmetric.encrypt(tmp_pub_key[100:], conn_box.client_public_key)
+        conn.send(tmp_pub_key_1 + tmp_pub_key_2)
         # 接收随机密钥
-        clt_random_key = conn.recv(512)
+        clt_random_key = conn.recv(1024)
         Debug.log("接收随机密钥：", clt_random_key)
         # 设置客户端结束标记
         conn_box.clt_end_flag = clt_random_key

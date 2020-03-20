@@ -20,7 +20,7 @@ if __name__ == '__main__':
     parser.add_argument('--remotessl', dest='remotessl', help='Remote encryption', action='store_true')
     parser.add_argument('--generateKey', dest='generateKey', help='Generate asymmetric key: private.pem, public.pem', action='store_true')
     parser.add_argument('--debug', dest='debug', help='Start by Debug', action='store_true')
-    parser.add_argument('--daemon', dest='daemon', help='Start by Daemons', action='store_true')
+    parser.add_argument('--daemon', dest='daemon', help='Start by Daemons(Not completed)', action='store_true')
 
     # 解析命令行参数
     args = parser.parse_args()
@@ -48,7 +48,9 @@ if __name__ == '__main__':
         if not publicKey or not privateKey:
             print("正在生成密钥...")
             public_key, private_key = symmetric.generate_temp_key()
-            print("生成密钥：private.pem, public.pem 完成")
+            print(public_key)
+            print(private_key)
+            print("生成临时密钥完成")
             Constants.publicKey = public_key
             Constants.privateKey = private_key
 
@@ -77,10 +79,6 @@ if __name__ == '__main__':
 
     # 日志
     print("Listening %s:%d" % (bind_address, bind_port))
-
-    # 研发过程默认开启debug
-    # proxy = 'admin:123456@192.168.0.103:1899'
-    # auth = "admin:123"
 
     # 设置前置代理信息
     if proxy:
