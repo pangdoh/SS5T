@@ -90,7 +90,6 @@ def send_next_node(tmp_data, s, conn, conn_box, target_host, target_port):
         conn_box.forward_recv_flag = False
         # 接收数据并返还客户端
         tr = threading.Thread(target=forward_recv, args=(s, conn, conn_box))
-        tr.setDaemon(True)
         tr.start()
 
 
